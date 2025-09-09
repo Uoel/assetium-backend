@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy everything
 COPY . .
 
+# Make mvnw executable
+RUN chmod +x mvnw
+
 # Build the app (skip tests for faster deploys)
 RUN ./mvnw clean package -DskipTests
 
